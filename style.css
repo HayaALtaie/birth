@@ -1,0 +1,341 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient (to bottom right, #f8f9fa, #e9ecef); /* Light gray gradient */
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    color: #007bff; /* Primary blue */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none;
+}
+
+#surpriseMessage {
+    margin-top: 25px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #dc3545; /* Red for emphasis */
+    animation: popIn 0.8s forwards;
+}
+
+/* Birthday Page Styling */
+.birthday-container {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7); /* Soft pink/red gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.birthday-heading {
+    font-size: 5em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    animation: bounceIn 1.5s ease-out;
+}
+
+.birthday-message {
+    font-size: 1.8em;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Confetti Animation */
+.confetti-animation {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f0c27b; /* Gold */
+    opacity: 0;
+    border-radius: 50%;
+    animation: confettiFall 5s infinite;
+}
+
+.confetti-animation:nth-child(2) { background-color: #a7d9b9; animation-delay: 0.5s; left: 10%; } /* Green */
+.confetti-animation:nth-child(3) { background-color: #b39cd0; animation-delay: 1s; left: 20%; } /* Purple */
+.confetti-animation:nth-child(4) { background-color: #f77f00; animation-delay: 1.5s; left: 30%; } /* Orange */
+.confetti-animation:nth-child(5) { background-color: #8c8cd9; animation-delay: 2s; left: 40%; } /* Blue */
+.confetti-animation:nth-child(6) { background-color: #f0c27b; animation-delay: 2.5s; left: 50%; } /* Gold */
+.confetti-animation:nth-child(7) { background-color: #a7d9b9; animation-delay: 3s; left: 60%; } /* Green */
+.confetti-animation:nth-child(8) { background-color: #b39cd0; animation-delay: 3.5s; left: 70%; } /* Purple */
+.confetti-animation:nth-child(9) { background-color: #f77f00; animation-delay: 4s; left: 80%; } /* Orange */
+.confetti-animation:nth-child(10) { background-color: #8c8cd9; animation-delay: 4.5s; left: 90%; } /* Blue */
+.confetti-animation:nth-child(11) { background-color: #f0c27b; animation-delay: 5s; left: 5%; }
+.confetti-animation:nth-child(12) { background-color: #a7d9b9; animation-delay: 5.5s; left: 95%; }
+
+@keyframes confettiFall {
+    0% { transform: translateY(-100px) rotateZ(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(100vh) rotateZ(720deg); opacity: 0; }
+}
+
+/* Balloon Animation */
+.balloon {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    background-color: #f48fb1; /* Pink */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    bottom: -150px;
+    left: calc(10% + var(--i)*15%);
+    animation: rise 10s ease-in-out infinite;
+    box-shadow: inset -10px -10px 0px rgba(0,0,0,0.2);
+    opacity: 0.8;
+}
+
+.balloon:nth-child(1) { --i: 0; background-color: #f48fb1; animation-delay: 0s; }
+.balloon:nth-child(2) { --i: 1; background-color: #81d4fa; animation-delay: 1.5s; } /* Light Blue */
+.balloon:nth-child(3) { --i: 2; background-color: #a5d6a7; animation-delay: 3s; } /* Green */
+.balloon:nth-child(4) { --i: 3; background-color: #ffcc80; animation-delay: 4.5s; } /* Orange */
+.balloon:nth-child(5) { --i: 4; background-color: #ce93d8; animation-delay: 6s; } /* Purple */
+.balloon:nth-child(6) { --i: 5; background-color: #f48fb1; animation-delay: 7.5s; }
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 15px solid inherit;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+
+/* Gift Box */
+.gift-box {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: #e57373; /* Reddish */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: boxPop 1s ease-out forwards;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+.box-top {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #c62828; /* Darker Red */
+    border-radius: 10px 10px 0 0;
+    z-index: 1;
+}
+
+.ribbon {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background-color: #ffeb3b; /* Yellow */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.bow {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: #ffeb3b; /* Yellow */
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.bow::before, .bow::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bow::before { transform: translate(-70%, -50%) rotate(45deg); }
+.bow::after { transform: translate(-30%, -50%) rotate(-45deg); }
+
+.gift-text {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInText 1s forwards 2s;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes boxPop {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    .birthday-heading {
+        font-size: 3em;
+    }
+    .birthday-message {
+        font-size: 1.2em;
+    }
+    .gift-box {
+        width: 150px;
+        height: 120px;
+    }
+    .balloon {
+        width: 60px;
+        height: 80px;
+    }
+}

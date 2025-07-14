@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get to Know You!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Let's Get to Know You!</h1>
+        <form id="infoForm">
+            <div class="form-group">
+                <label for="favColor">What's your favorite color?</label>
+                <input type="text" id="favColor" name="favColor" placeholder="e.g., Blue" required>
+            </div>
+            <div class="form-group">
+                <label for="favSeason">What's your favorite season?</label>
+                <select id="favSeason" name="favSeason" required>
+                    <option value="">Select a season</option>
+                    <option value="spring">Spring</option>
+                    <option value="summer">Summer</option>
+                    <option value="autumn">Autumn</option>
+                    <option value="winter">Winter</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="birthDate">When is your birthday?</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="surpriseMessage" class="hidden">🎉 Oh my goodness! Today is your birthday!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

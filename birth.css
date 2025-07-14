@@ -139,7 +139,7 @@ button[type="submit"]:hover {
     line-height: 1.7;
     margin-bottom: 60px;
     animation: fadeIn 2s ease-out;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.2px;
 }
 

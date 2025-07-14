@@ -485,6 +485,7 @@ button[type="submit"]:hover {
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5em;
+        max-width: 330px;
     }
     .birthday-heading {
         font-size: 3em;

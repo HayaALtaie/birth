@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = 'birthday.html';
                 }, 2000);
             } else {
-                alert('Thanks for sharing your info! You can try again on your actual birthday for a surprise!');
+                alert('Thanks for sharing your info! You can try again on your actual birthday please..');
                 infoForm.reset();
             }
         });

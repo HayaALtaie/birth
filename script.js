@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const birthDateInput = document.getElementById('birthDate').value;
         const surpriseMessage = document.getElementById('surpriseMessage');
 
-        // قارن مباشرة إذا كانت القيمة تطابق 1991-07-15
         if (birthDateInput === '1991-07-15') {
             surpriseMessage.classList.remove('hidden');
             setTimeout(() => {
